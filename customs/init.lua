@@ -10,15 +10,6 @@ return {
 		opts = require("user.configs.symbols_outline"),
 	},
 	{
-		"theniceboy/joshuto.nvim",
-		keys = { { ";a", "<cmd> Joshuto <cr>", desc = "Joshuto" } },
-	},
-	{
-		"aspeddro/gitui.nvim",
-		keys = { { ";g", "<cmd> Gitui <cr>", desc = "gitui" } },
-		opts = { command = { enable = true } },
-	},
-	{
 		"nvim-telescope/telescope-symbols.nvim",
 		keys = { { ",d", "<cmd> Telescope symbols <cr>", desc = "Emoji input" } },
 	},

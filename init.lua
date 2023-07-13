@@ -10,6 +10,14 @@ return {
 		{ import = "astrocommunity.code-runner.executor-nvim" },
 		{ import = "astrocommunity.note-taking.neorg" },
 		{ import = "user.customs"},
+    -- language
+	  { import = "astrocommunity.pack.bash" },
+	  { import = "astrocommunity.pack.cmake" },
+	  { import = "astrocommunity.pack.markdown" },
+	  { import = "astrocommunity.pack.lua" },
+	  { import = "astrocommunity.pack.rust" },
+	  { import = "astrocommunity.pack.toml" },
+	  { import = "astrocommunity.pack.yaml" },
 		{
 			"folke/flash.nvim",
 			opts = { modes = { char = { enabled = false } } }
@@ -19,16 +27,9 @@ return {
 	lsp = {
 		formatting = { format_on_save = { enabled = false } },
 		servers = {
-			"bashls",
-			"pylsp",
 			-- "ccls",
 			"clangd",
-			"neocmake",
-			"rust_analyzer",
-			"html",
-			"yamlls",
 			"bitbake",
-			"swift_mesonls",
 		},
 		config = {
 			bitbake = function()
