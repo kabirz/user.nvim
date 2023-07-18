@@ -1,3 +1,4 @@
+local utils = require("user.utils")
 return {
 	{
 		"oberblastmeister/zoom.nvim",
@@ -23,6 +24,24 @@ return {
 		config = function(_, opts)
 			require("yanky").setup(opts)
 			require("telescope").load_extension("yank_history")
+		end,
+	},
+	{
+		"jay-babu/mason-null-ls.nvim",
+		dependencies = { "jose-elias-alvarez/null-ls.nvim" },
+		opts = function(_, opts)
+		  local null_ls = require("null-ls")
+		  local nf = null_ls.builtins.formatting
+			opts.ensure_installed = utils.list_insert_unique(opts.ensure_installed, "clang-format")
+			opts.handlers = {
+				clang_format = function()
+					null_ls.register(nf.clang_format.with({
+						extra_args = {
+							"--style=file:" .. vim.fn.stdpath("config") .. "/lua/user/.clang-format",
+						},
+					}))
+				end,
+			}
 		end,
 	},
 }

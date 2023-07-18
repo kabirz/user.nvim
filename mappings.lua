@@ -65,4 +65,13 @@ if is_available "toggleterm.nvim" then
     maps.n["<leader>ti"] = maps.n[";i"]
   end
 end
+
+maps.i = {}
+if is_available "codeium.vim" then
+  maps.i["<C-]>"] = { function() return vim.fn["codeium#Accept"]() end, expr = true ,desc = "Codeium Accept" }
+end
+
+if is_available "project_nvim" then
+  maps.n[",p"] = { "<cmd> Telescope projects <cr>", desc = "Telescope Project"}
+end
 return maps

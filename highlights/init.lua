@@ -8,5 +8,10 @@ return {
 	FlashCurrent = { bg = bg, fg = "#04a5e5", bold = true, italic = true, underline = true },
 	FlashLabel = { bg = bg, fg = "#ff007c", bold = true },
 	FlashBackdrop = { bg = bg, fg = "#6c7086" },
+	-- lsp inlay hint
 	LspInlayHint = get_hlgroup("Comment"),
+	-- lsp reference
+	LspReferenceRead = { bg = bg, fg = "#ff0000", bold = true , italic = true },
+	LspReferenceText = { bg = bg, fg = "#AD0000", bold = true , italic = true },
+	LspReferenceWrite = { bg = bg, fg = "#ff00ff", bold = true , italic = true },
 }
