@@ -29,10 +29,9 @@ return {
 	lsp = {
 		formatting = {
 		  format_on_save = { enabled = false },
-		  disabled = { "ccls", "clangd" },
+		  disabled = { "clangd" },
 		},
 		servers = {
-			-- "ccls",
 			"clangd",
 			"bitbake",
 		},
@@ -47,13 +46,6 @@ return {
 			clangd = {
         capabilities = { offsetEncoding = "utf-16" }
       },
-			ccls = {
-			  document_config = {
-			    default_config = {
-						offset_encoding = "utf-16"
-			    }
-			  }
-      }
 		},
 	},
 }
