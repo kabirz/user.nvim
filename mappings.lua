@@ -3,32 +3,18 @@ local utils = require("user.utils")
 local is_available = utils.is_available
 
 maps.n = {
-  ["bl"] = { "<cmd> bnext <cr>", desc = "Goto next buffer" },
-  ["bh"] = { "<cmd> bprevious <cr>", desc = "Goto prev tab" },
-  ["bf"] = { "<cmd> bfirst <cr>", desc = "Goto first tab" },
-  ["be"] = { "<cmd> blast <cr>", desc = "Goto last tab" },
-  ["bd"] = { "<cmd> bd <cr>", desc = "close current file" },
-  ["tl"] = { "<cmd> tabnext <cr>", desc = "Goto next tab" },
-  ["th"] = { "<cmd> tabprevious <cr>", desc = "Goto prev tab" },
-  ["tf"] = { "<cmd> tabfirst <cr>", desc = "Goto first tab" },
-  ["te"] = { "<cmd> tablast <cr>", desc = "Goto last tab" },
-  ["td"] = { "<cmd> tabclose <cr>", desc = "close current tab" },
-  ["gk"] = { "<cmd> Man <cr>", desc = "Goto manual" },
-  [";h"] = { "<C-w>h", desc = "Window left" },
-  [";l"] = { "<C-w>l", desc = "Window right" },
-  [";j"] = { "<C-w>j", desc = "Window down" },
-  [";k"] = { "<C-w>k", desc = "Window up" },
-  [",h"] = { "<cmd> hide <cr>", desc = "hide current buffer" },
-  [",o"] = { "<cmd> only <cr>", desc = "close others buffer" },
+  ["<localleader>k"] = { "<cmd> Man <cr>", desc = "Goto manual" },
+  ["<localleader>h"] = { "<cmd> hide <cr>", desc = "hide current buffer" },
+  ["<localleader>o"] = { "<cmd> only <cr>", desc = "close others buffer" },
   -- line numbers
-  [";n"] = { "<cmd> set nu! <CR>", desc = "Toggle line number" },
-  [";r"] = { "<cmd> set rnu! <CR>", desc = "Toggle relative number" },
+  ["<localleader>n"] = { "<cmd> set nu! <CR>", desc = "Toggle line number" },
+  ["<localleader>r"] = { "<cmd> set rnu! <CR>", desc = "Toggle relative number" },
 
-  [";c"] = {
+  ["<localleader>c"] = {
     "<cmd> edit " .. vim.fn.stdpath("config") .. "/lua/user/init.lua <cr>",
     desc = "open user config",
   },
-  [";d"] = {
+  ["<localleader>d"] = {
     function() vim.fn.chdir(vim.fn.expand("%:p:h")) end,
     desc = "change current directory",
   },
@@ -43,23 +29,23 @@ end
 
 if is_available("toggleterm.nvim") then
   if vim.fn.executable("joshuto") == 1 then
-    maps.n[";a"] = { utils.joshuto, desc = "ToggleTerm joshuto" }
-    maps.n["<leader>ta"] = maps.n[";a"]
+    maps.n["<localleader>a"] = { utils.joshuto, desc = "ToggleTerm joshuto" }
+    maps.n["<leader>ta"] = maps.n["<localleader>a"]
   end
   if vim.fn.executable("gitui") == 1 then
-    maps.n[";g"] = {
+    maps.n["<localleader>g"] = {
       function() utils.toggle_term_cmd("gitui -d " .. vim.fn.expand("%:p:h")) end,
       desc = "ToggleTerm gitui",
     }
-    maps.n["<leader>tg"] = maps.n[";g"]
+    maps.n["<leader>tg"] = maps.n["<localleader>g"]
   end
   local ipython = vim.fn.executable("ipython3") == 1 and "ipython3" or vim.fn.executable("ipython") == 1 and "ipython"
   if ipython then
-    maps.n[";i"] = {
+    maps.n["<localleader>i"] = {
       function() utils.toggle_term_cmd(ipython) end,
       desc = "ToggleTerm ipython",
     }
-    maps.n["<leader>ti"] = maps.n[";i"]
+    maps.n["<leader>ti"] = maps.n["<localleader>i"]
   end
 end
 
@@ -72,5 +58,4 @@ if is_available("codeium.vim") then
   }
 end
 
-if is_available("project_nvim") then maps.n[",p"] = { "<cmd> Telescope projects <cr>", desc = "Telescope Project" } end
 return maps
