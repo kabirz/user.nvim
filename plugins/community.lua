@@ -25,6 +25,7 @@ return {
   -- language
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cmake" },
+  { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.rust" },
   { "simrat39/rust-tools.nvim", opts = { tools = { inlay_hints = { auto = false } } } },
