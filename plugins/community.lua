@@ -1,6 +1,7 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.colorscheme.dracula-nvim" },
+  { "Mofiqul/dracula.nvim", opts = { transparent_bg = true } },
   { import = "astrocommunity.completion.codeium-vim" },
   { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
