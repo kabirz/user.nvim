@@ -14,12 +14,6 @@ return {
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.motion.flash-nvim" },
   { "folke/flash.nvim", opts = { modes = { char = { enabled = false } } } },
-  { import = "astrocommunity.code-runner.executor-nvim" },
-  { import = "astrocommunity.note-taking.neorg" },
-  {
-    "nvim-neorg/neorg",
-    opts = require("user.configs.others").neorg_opts,
-  },
   { import = "astrocommunity.project.project-nvim" },
   {
     "jay-babu/project.nvim",

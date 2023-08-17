@@ -26,11 +26,6 @@ return {
     end,
   },
   {
-    "jay-babu/mason-null-ls.nvim",
-    dependencies = { "jose-elias-alvarez/null-ls.nvim" },
-    opts = require("user.configs.others").mason_config,
-  },
-  {
     "NvChad/nvterm",
     keys = {
       { ";i", function() require("nvterm.terminal").toggle("float") end,
