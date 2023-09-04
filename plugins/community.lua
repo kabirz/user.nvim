@@ -2,11 +2,8 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.colorscheme.dracula-nvim" },
   { "Mofiqul/dracula.nvim", opts = { transparent_bg = true } },
-  {
-    "rcarriga/nvim-notify",
-    opts = function(_, opts) opts.background_colour = "#000000" end
-  },
   { import = "astrocommunity.completion.codeium-vim" },
+  { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
   { import = "astrocommunity.bars-and-lines.heirline-mode-text-statusline" },
@@ -19,7 +16,7 @@ return {
     "jay-babu/project.nvim",
     name = "project_nvim",
     opts = { manual_mode = true },
-    keys = { "<localleader>p", "<cmd> Telescope projects <cr>", desc = "Telescope Project" },
+    keys = {{ "<localleader>p", "<cmd> Telescope projects <cr>", desc = "Telescope Project" }},
   },
   -- language
   { import = "astrocommunity.pack.bash" },

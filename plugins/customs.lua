@@ -14,18 +14,6 @@ return {
     keys = { { "<localleader>e", "<cmd> Telescope symbols <cr>", desc = "Emoji input" } },
   },
   {
-    "gbprod/yanky.nvim",
-    dependencies = "kkharji/sqlite.lua",
-    opts = { ring = { storage = "sqlite" } },
-    keys = {
-      { "<leader>y", "<cmd> Telescope yank_history <cr>", desc = "Open Yank History" },
-    },
-    config = function(_, opts)
-      require("yanky").setup(opts)
-      require("telescope").load_extension("yank_history")
-    end,
-  },
-  {
     "NvChad/nvterm",
     keys = {
       { ";i", function() require("nvterm.terminal").toggle("float") end,
