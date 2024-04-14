@@ -1,5 +1,6 @@
 return {
   "AstroNvim/astrocommunity",
+  { import = "astrocommunity.recipes.vscode" },
   { import = "astrocommunity.colorscheme.dracula-nvim" },
   { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.completion.codeium-vim" },
