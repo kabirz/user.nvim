@@ -60,7 +60,7 @@ return {
           ["<localleader>r"] = { "<cmd> set rnu! <CR>", desc = "Toggle relative number" },
 
           ["<localleader>c"] = {
-            "<cmd> edit " .. vim.fn.stdpath "config" .. "/lua/user/init.lua <cr>",
+            "<cmd> edit " .. vim.fn.stdpath "config" .. "/init.lua <cr>",
             desc = "open user config",
           },
           ["<localleader>d"] = {
