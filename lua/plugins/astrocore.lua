@@ -6,10 +6,7 @@ return {
     local maps = opts.mappings
 
     if astro.is_available "neo-tree.nvim" then
-      maps.n["<leader>a"] = {
-        function() vim.cmd(string.format("Neotree toggle %s", vim.fn.expand "%:p:h")) end,
-        desc = "Toggle current file neotree",
-      }
+      maps.n["<Leader>a"] = { "<Cmd>Neotree toggle reveal_force_cwd<CR>", desc = "Toggle Current Explorer" }
     end
 
     if astro.is_available "toggleterm.nvim" then
