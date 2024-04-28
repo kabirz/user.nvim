@@ -9,6 +9,16 @@ return {
       maps.n["<Leader>a"] = { "<Cmd>Neotree toggle reveal_force_cwd<CR>", desc = "Toggle Current Explorer" }
     end
 
+    if astro.is_available "fittencode.nvim" then
+      maps.i["<C-l>"] = {
+        function()
+          local API = require("fittencode.api").api
+          if API.has_suggestions() then API.accept_all_suggestions() end
+        end,
+        desc = "Accept all suggestions",
+      }
+    end
+
     if astro.is_available "toggleterm.nvim" then
       if vim.fn.executable "joshuto" == 1 then
         maps.n["<localleader>a"] = { joshuto, desc = "ToggleTerm joshuto" }
@@ -44,7 +54,7 @@ return {
         },
         g = { -- vim.g.<key>
           -- configure global vim variables (vim.g)
-          inlay_hints_enabled = true,
+          updatetime = 200, -- sets vim.opt.updatetime to 200
         },
       },
       mappings = {

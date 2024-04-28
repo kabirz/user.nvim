@@ -3,13 +3,14 @@ return {
   { import = "astrocommunity.recipes.vscode" },
   { import = "astrocommunity.colorscheme.dracula-nvim" },
   { import = "astrocommunity.color.transparent-nvim" },
-  { import = "astrocommunity.completion.codeium-vim" },
+  { import = "astrocommunity.completion.fittencode-nvim" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.motion.flash-nvim" },
   { "folke/flash.nvim", opts = { modes = { char = { enabled = false } } } },
+  { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
   { import = "astrocommunity.project.project-nvim" },
   {
     "jay-babu/project.nvim",
@@ -20,6 +21,7 @@ return {
   -- language
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cmake" },
+  { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.rust" },
