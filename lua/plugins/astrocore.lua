@@ -19,6 +19,10 @@ return {
       }
     end
 
+    if astro.is_available "project.nvim" then
+      maps.n["<localleader>p"] = { "<cmd> Telescope projects <cr>", desc = "Telescope Project" }
+    end
+
     if astro.is_available "toggleterm.nvim" then
       if vim.fn.executable "joshuto" == 1 then
         maps.n["<localleader>a"] = { joshuto, desc = "ToggleTerm joshuto" }

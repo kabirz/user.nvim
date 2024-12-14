@@ -5,9 +5,9 @@
 cargo binstall bob-nvim
 ```
 
-## Install nvim nightly
+## Install nvim
 ```shell
-bob use nightly
+bob use stable
 ```
 
 # Install AstroNvim and user

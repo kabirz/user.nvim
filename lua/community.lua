@@ -5,6 +5,7 @@ return {
   { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.completion.fittencode-nvim" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
+  -- { import = "astrocommunity.indent.indent-rainbowline" },
   { import = "astrocommunity.bars-and-lines.bufferline-nvim" },
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
@@ -12,12 +13,6 @@ return {
   { "folke/flash.nvim", opts = { modes = { char = { enabled = false } } } },
   { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
   { import = "astrocommunity.project.project-nvim" },
-  {
-    "jay-babu/project.nvim",
-    name = "project_nvim",
-    opts = { manual_mode = true },
-    keys = { { "<localleader>p", "<cmd> Telescope projects <cr>", desc = "Telescope Project" } },
-  },
   -- language
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.cmake" },
