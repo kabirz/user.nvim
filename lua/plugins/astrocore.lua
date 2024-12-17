@@ -31,7 +31,12 @@ return {
 
       if vim.fn.executable "gitui" == 1 then
         maps.n["<localleader>g"] = {
-          function() astro.toggle_term_cmd("gitui -d " .. vim.fn.expand "%:p:h") end,
+          function()
+            astro.toggle_term_cmd {
+              cmd = "gitui -d " .. vim.fn.expand "%:p:h",
+              direction = "float",
+            }
+          end,
           desc = "ToggleTerm gitui",
         }
         maps.n["<leader>tg"] = maps.n["<localleader>g"]
@@ -40,7 +45,12 @@ return {
       local ipython = vim.fn.executable "ipython3" == 1 and "ipython3" or vim.fn.executable "ipython" == 1 and "ipython"
       if ipython then
         maps.n["<localleader>i"] = {
-          function() astro.toggle_term_cmd(ipython) end,
+          function()
+            astro.toggle_term_cmd {
+              cmd = ipython,
+              direction = "float",
+            }
+          end,
           desc = "ToggleTerm ipython",
         }
         maps.n["<leader>ti"] = maps.n["<localleader>i"]
@@ -55,6 +65,7 @@ return {
           spell = false, -- sets vim.opt.spell
           signcolumn = "auto", -- sets vim.opt.signcolumn to auto
           wrap = false, -- sets vim.opt.wrap
+          colorcolumn = "100", -- set vim.opt.colorcolumn
         },
         g = { -- vim.g.<key>
           -- configure global vim variables (vim.g)
