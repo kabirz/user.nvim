@@ -10,8 +10,6 @@ return {
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.motion.flash-nvim" },
-  { "folke/flash.nvim", opts = { modes = { char = { enabled = false } } } },
-  { import = "astrocommunity.keybinding.nvcheatsheet-nvim" },
   { import = "astrocommunity.project.project-nvim" },
   -- language
   { import = "astrocommunity.pack.bash" },
