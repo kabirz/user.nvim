@@ -58,6 +58,15 @@ return {
     end
 
     return astro.extend_tbl(opts, {
+      -- Filetype detection (see :h vim.filetype.add)
+      filetypes = {
+        extension = {
+          conf = "kconfig",
+        },
+        filename = {
+          [".config"] = "kconfig",
+        },
+      },
       -- Configure core features of AstroNvim
       features = {
         large_buf = { size = 1024 * 256, lines = 10000 }, -- set global limits for large files for disabling features like treesitterAdd commentMore actions
