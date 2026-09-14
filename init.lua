@@ -15,6 +15,10 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+-- compat shim: project.nvim / symbols-outline.nvim still call vim.lsp.buf_get_clients(),
+-- which is deprecated since nvim 0.11 and warns on every call under nvim 0.12
+vim.lsp.buf_get_clients = function(bufnr) return vim.lsp.get_clients { bufnr = bufnr } end
+
 -- validate that lazy is available
 if not pcall(require, "lazy") then
   -- stylua: ignore
